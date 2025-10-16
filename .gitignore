@@ -39,12 +39,6 @@ Thumbs.db
 *.tmp
 *.temp
 
-# Test files and outputs
-test_*.jpg
-test_*.png
-result*.png
-pool_result*.png
-
 # Docker
 .dockerignore
 
