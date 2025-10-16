@@ -1,0 +1,52 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+.env
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Model files (large binaries - keep directory structure with .gitkeep)
+models/**/*.gguf
+models/**/*.safetensors
+models/**/*.bin
+models/**/*.pt
+models/**/*.pth
+models/models--Qwen--Qwen-Image-Edit/**
+models/blobs/**
+# Keep .gitkeep and README.md files
+!models/**/.gitkeep
+!models/**/README.md
+models/models--black-forest-labs--FLUX.1-Kontext-Dev/**
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+# Test files and outputs
+test_*.jpg
+test_*.png
+result*.png
+pool_result*.png
+
+# Docker
+.dockerignore
+
+# RunPod
+.runpod/
