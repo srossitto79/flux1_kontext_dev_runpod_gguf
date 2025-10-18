@@ -29,7 +29,8 @@ def load_flux_pipeline():
         torch_dtype=torch.bfloat16,
         local_files_only=True,    
         config="black-forest-labs/FLUX.1-Kontext-Dev",
-        subfolder="transformer"       
+        subfolder="transformer",
+        cache_dir=MODELS_DIR
     )
     pipe = FluxKontextPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-Kontext-Dev",
@@ -39,10 +40,12 @@ def load_flux_pipeline():
         local_files_only=True,
         #device_map="balanced"
     )        
-    #pipe.to("cuda")
-    #pipe.enable_attention_slicing()
-    #pipe.enable_sequential_cpu_offload()
-    pipe.enable_model_cpu_offload()
+    
+    if torch.cuda.is_available() :
+        pipe.enable_model_cpu_offload()
+    else:
+        pipe.to("cpu")
+        
     pipe.set_progress_bar_config(disable=None)
     return pipe
 

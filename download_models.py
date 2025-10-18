@@ -29,6 +29,10 @@ def assure_pipeline_files(model_id: str = "black-forest-labs/FLUX.1-Kontext-Dev"
         "image_processor/**",
         "processor/*",
         "processor/**",
+        "text_encoder/*",
+        "text_encoder/**",
+        "text_encoder_2/*",
+        "text_encoder_2/**",
         "*.json",
         "*.txt",
     ]

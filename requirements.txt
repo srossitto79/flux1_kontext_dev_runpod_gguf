@@ -16,3 +16,4 @@ matplotlib
 tqdm
 protobuf
 sentencepiece
+gguf
